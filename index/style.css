@@ -1,0 +1,41 @@
+body{
+    margin: 10px;
+    padding: 30px;
+    border: 50px solid pink;
+}
+ul li:nth-child(2){
+    background-color: deeppink;
+}
+ul li:nth-child(4){
+    background-color: rgb(160, 97, 131);
+}
+input[type="text"]{
+    border: 3px solid lime;
+}
+div{
+    border: 4px solid blueviolet;
+    cursor: pointer;
+    background-color: black;
+    
+}
+div:hover{
+    border: 4px solid rgb(6, 243, 18);
+    background-color: white;
+
+}
+h3::before{
+    content: "✂️";
+}
+.text1 {
+    border: 1px solid red;
+    cursor: pointer;
+    
+}
+.text2 {
+    border: 1px solid blue;
+    cursor: pointer;
+}
+article p{
+    font-family: 'Italianno', cursive;
+}
+
