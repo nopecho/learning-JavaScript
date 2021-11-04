@@ -1,0 +1,28 @@
+
+.pic{
+    height: auto;
+    background: skyblue;
+    /* display: flex;
+    justify-content: center;
+    margin: 0 auto; */
+    text-align: center;
+}
+.subpic{
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    text-align: center;
+    margin: 5px;
+    display: inline-block;
+}
+@media screen and (max-width: 620px){
+    .pic{
+        width: 100vw;
+        height: 420px;
+        /* flex-direction : column;
+        align-items : center; */
+    }
+    .subpic{
+        width: 90%;
+    }
+}

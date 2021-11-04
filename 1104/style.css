@@ -1,0 +1,17 @@
+body{
+    margin: 5%;
+    
+}
+.container{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: yellow;
+	display: grid;
+    grid-template-columns:2fr 2fr 1fr;
+    grid-template-rows:minmax(100px, auto);
+    gap:1em;
+}
+.item{
+    background: skyblue;
+}
