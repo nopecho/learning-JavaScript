@@ -35,9 +35,15 @@ function down(){
     let top = parseInt(topStyle);
     vy += gravity;
     top += vy;
-    if(!isDead && top >= limitBottom){
+    
+    if( vy >= jumpHeight){
+        jumpKey=false;
+    }
+
+    if(!isDead && !jumpKey && top >= limitBottom){
         top = limitBottom;
         isJumping=true;
+        vy=0; //y방향 속도 0
     }
     if(top > 2000){
         alert("zzz")
@@ -61,12 +67,10 @@ function move(e){
         }
     }
     else if(e.keyCode === 32 || e.keyCode === 38){
-        if(isJumping && top >= limitTop){
-            vy -= gravity;
-            top -= vy;
-        }
-        if(vy <= 0){
+        if(isJumping){ //땅에 있으면
+            vy = -jumpHeight;
             isJumping = false;
+            jumpKey = true;
         }
     }
     else if(e.keyCode === 37){
