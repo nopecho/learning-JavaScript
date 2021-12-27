@@ -53,12 +53,13 @@ for(let index in temp){
 }
 
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let copy=[]
+let copy=''
 for(let a of alphabet){
     copy += a
     a = copy;
     console.log(a)
 }
+console.log(alphabet)
 
 const array = [];
 let k = 1;
@@ -117,7 +118,9 @@ const words = [
     'radar',
     'madam',
     'mario',
-    'level'
+    'level',
+    'lololol',
+    'plolq'
 ]
 
 function isPalindrome(words) {
