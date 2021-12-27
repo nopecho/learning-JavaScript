@@ -22,12 +22,13 @@ const gravity = 1;
 const FPS = 60;
 const limitBottom = 500;
 const limitLeft=700;
-const limitTop = 300;
+const jumpHeight = 30; //점프 높이
 
-let vx = 50;
+let vx = 20;
 let vy = 0;
-let isJumping = true;
+let isJumping = flase; // true => false
 let isDead = false;
+let jumpKey = flase; //변수 추가 => 사용자가 스페이스바나 화살표 위쪽 키를 누른 경우 true
 
 function down(){
     const topStyle = window.getComputedStyle(box).top //캐릭터의 y방향
