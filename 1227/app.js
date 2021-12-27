@@ -107,7 +107,6 @@ movies[1].title = 'syleemomo'
 console.log(movies)
 console.log(movies_copied)
 
-
 const words = [
     'abc',
     'animal',
