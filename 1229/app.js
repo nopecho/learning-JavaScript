@@ -32,4 +32,46 @@ console.log(found)
 const foundI = fruits.findIndex(s => s.length > 6)
 console.log(foundI)
 
-//[배열].find((콜백함수)) //배열의 콜백함수 리턴값에 해당되는 배열요소 반환
+//[배열].find((콜백함수)) => 배열의 콜백함수 리턴값에 해당되는 배열요소 반환
+
+
+const words = ['car', 'paper', 'mobile', 'computer', 'school', 'sun', 'house']
+
+const wordsFilltered = words.filter(word => word.length>5)
+console.log(wordsFilltered)
+//[배열].filter((콜백함수)) => 각 요소의 콜백함수 조건에 따른 새로운 배열 생성
+
+
+const numbers = [32, 6, 4, 13, 9, 57]
+console.log(numbers.some( num => num%3 ===0))
+//[배열].some((콜백함수)) => 각 요소의 콜백함수 조건이 하나라도 true면 true반환
+
+console.log(numbers.every( num => num%3===0))
+//[배열].some((콜백함수)) => 각 요소의 콜백함수 조건이 전부 true면 true반환
+
+const currentTime = [3, 8, 23]
+const timeStr =  []
+currentTime.forEach( time => timeStr.push(`${time<10 ? '0'+ time : time}`) )
+console.log(timeStr.join(':'))
+
+const userIDs = ['victoria', 'sun', 'johseb', 'syleemomo', 'hannah', 'shara', 'martin', 'gorgia', 'nana', 'dannel']
+userIDs.forEach(user => console.log(user+'@gmail.com'))
+//[배열].forEach((콜백함수)) => 배열의 각 요소에 대해 반복해서 실행 (리턴값 없음)
+
+console.log('***************************************')
+const userEmails = [
+    'victoria@gmail.com',
+    'sun@gmail.com',
+    'johseb@gmail.com',
+    'syleemomo@gmail.com',
+    'hannah@gmail.com',
+    'shara@gmail.com',
+    'martin@gmail.com',
+    'gorgia@gmail.com',
+    'nana@gmail.com',
+    'dannel@gmail.com'
+]
+const userID = userEmails.map(user => user.split('@')[0])
+userID.forEach(user => console.log(user))
+
+
