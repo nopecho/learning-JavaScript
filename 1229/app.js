@@ -73,5 +73,21 @@ const userEmails = [
 ]
 const userID = userEmails.map(user => user.split('@')[0])
 userID.forEach(user => console.log(user))
+//[배열].map((콜백함수)) => 배열 각 요소에 대해 콜백함수 실행 후 콜백함수 리턴값을 새로운 배열로 리턴
+
+
+const fruitss = ['apple', 'banana', 'peach', 'strawberry', 'watermelon']
+const icons = ['🍎', '🍌', '🍑', '🍓', '🍉']
+const rootDiv = document.getElementById('root')
+
+const reusltText = icons.map((icon,index) => icon+" "+fruitss[index])
+
+reusltText.forEach(text =>{
+    const item = document.createElement('div')
+    item.innerText = text
+    rootDiv.appendChild(item)
+})
+
+
 
 
