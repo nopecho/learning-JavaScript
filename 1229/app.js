@@ -217,7 +217,7 @@ const movieRelease = movies.find( movie => {
 console.log(movieRelease)
 
 //quiz3
-const moiveName = movies.find( movie => movie.title.indexOf('man') != -1 )
+const moiveName = movies.find( movie => movie.title.includes('man') )
 console.log(moiveName)
 
 //quiz4
@@ -241,7 +241,7 @@ const words = [
     'level'
 ]
 
-const wordsAtA = words.filter(word => word.indexOf('a') != -1)
+const wordsAtA = words.filter(word => word.includes('a') )
 wordsAtA.forEach(word => console.log(word))
 
 //quiz6 , 7
@@ -322,7 +322,7 @@ const users = [
 ]
 
  const findUser = users.filter(user => user.age > 0 && user.age%1 === 0)
- .filter(user => user.email.indexOf('@') != -1 && user.email.lastIndexOf('.com') != -1)
+ .filter(user => user.email.includes('@') && user.email.includes('.com'))
  console.log(findUser)
 
 //quiz12
