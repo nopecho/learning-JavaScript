@@ -374,7 +374,6 @@ fetch(API_URL)
     productsArray = [...products];
     sortProductsArray = products.sort((a,b) => a.price - b.price );
     result = [...productsArray];
-    sortResult = [...sortProductsArray];
 })
 
 const sortBtn = document.querySelector('.sort-btn')
@@ -392,19 +391,17 @@ function sortProducts(e){
     const btn = e.target;
 
     const sortResult = [...result];
-    sortResult.sort((a,b) => a.price - b.price )
-    if(sortResult )
-    
     removeProducts()
     if(!isSorted){
         btn.innerText = 'Sort'
         isSorted = true;
+        sortResult.sort((a,b) => a.price - b.price )
         sortResult.forEach(p => displayProduct(buildElement(p)))
     }
     else{
         btn.innerText = 'Price'
         isSorted = false;
-        result.forEach(p => displayProduct(buildElement(p)))
+        sortResult.forEach(p => displayProduct(buildElement(p)))
     }
 }
 
