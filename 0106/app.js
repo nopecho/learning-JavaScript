@@ -15,6 +15,12 @@ const strToArray = str.split(' ')
 console.log(strToArray)
 
 const sentence = 'I (joined) swimming <club> in my highschool'
-const splitedSentence = sentence.split(/[() <>]/)
+const splitedSentence = sentence.split(/[() <>]/) //정규식 사용 가능
 console.log(splitedSentence)
 
+const sentence2 = 'I joined swimming club in my highschool. that club was awsome !'
+const modifiedSentence = sentence2.split(' ')
+    .map(word => word === 'club' ? '🏊' : word)
+    .join(' ')
+
+console.log(modifiedSentence)
