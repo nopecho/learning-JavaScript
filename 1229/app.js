@@ -353,7 +353,9 @@ function buildElement(product){
     const type = document.createElement('div')
     type.className = 'product-type'
     type.innerText = product.product_type
-    
+
+    item.setAttribute('id',`${product.price}`)
+
     item.append(img,name,description,type)
     return item
 }
@@ -374,12 +376,14 @@ fetch(API_URL)
     productsArray = [...products];
     sortProductsArray = products.sort((a,b) => a.price - b.price );
     result = [...productsArray];
+    sortResult = [...sortProductsArray];
 })
 
 const sortBtn = document.querySelector('.sort-btn')
 let productsArray = []; //원본 배열
 let sortProductsArray =[]; //원본 정렬 배열
 let result = []; //돔 조작 
+let sortResult = [];
 let isSorted = false;
 
 function removeProducts(){
@@ -387,21 +391,21 @@ function removeProducts(){
     origin.forEach(e => e.remove())
 }
 
+
 function sortProducts(e){
     const btn = e.target;
 
-    const sortResult = [...result];
     removeProducts()
     if(!isSorted){
-        btn.innerText = 'Sort'
+        btn.innerText = '정렬됨'
         isSorted = true;
-        sortResult.sort((a,b) => a.price - b.price )
-        sortResult.forEach(p => displayProduct(buildElement(p)))
-    }
-    else{
-        btn.innerText = 'Price'
+        sortResult
+        .sort((a,b) => a.price - b.price )
+        .forEach(p => displayProduct(buildElement(p)))
+    }else{
+        btn.innerText = '정렬안됨'
         isSorted = false;
-        sortResult.forEach(p => displayProduct(buildElement(p)))
+        result.forEach(p => displayProduct(buildElement(p)));
     }
 }
 
@@ -415,11 +419,14 @@ function searchProductByType(e){
     const search = e.target.value
     removeProducts();
     if(!isSorted){
-        result = productsArray.filter(p => p.product_type.includes(search));
+        result = productsArray
+        .filter(p => p.product_type.includes(search))
+        .forEach(p => displayProduct(buildElement(p)));
     }else{
-        result = sortProductsArray.filter(p => p.product_type.includes(search));
+        sortResult = sortProductsArray
+        .filter(p => p.product_type.includes(search))
+        .forEach(p => displayProduct(buildElement(p)));
     }
-    result.forEach(p => displayProduct(buildElement(p)))
 }
 
 searchInput.addEventListener('input',searchProductByType)
