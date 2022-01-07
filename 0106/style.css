@@ -48,8 +48,84 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+.lyric{
+    margin-left: 5px;
+}
 
 .highlight{
     background: greenyellow;
     display: inline-block;
+}
+h1{
+    text-align: center;
+    color: darkorange;
+}
+#form{
+    width: 500px;
+    margin: 50px auto;
+}
+label{
+    font-weight: bold;
+    font-size: 1rem;
+    color: darkorange;
+}
+#user-comment-input{
+    all: unset;
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    border: 2px solid darkorange;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#search-user-comment{
+    all: unset;
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    border: 2px solid darkorange;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#search-user-comment::placeholder{
+    color: rgba(179, 156, 156, 0.342);
+    font-size: 0.9rem;
+}
+
+#user-comments{
+    width: 500px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.comment{
+    box-shadow: 1px 1px 5px 5px darkorange;
+    padding: 10px;
+    background: darkorange;
+    color: wheat;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+
+}
+#user-comment-add{
+    all: unset;
+    width: 70px;
+    height: 30px;
+    background: darkorange;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    float: right;
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
 }

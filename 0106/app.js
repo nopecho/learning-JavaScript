@@ -335,3 +335,50 @@ function highLightWords(e){
     }
 }
 searchEl.addEventListener('input',highLightWords)
+
+
+const commentInput = document.getElementById('user-comment-input')
+const userComments = document.getElementById('user-comments') 
+const submitBtn = document.getElementById('user-comment-add')
+const searchUserComment = document.getElementById('search-user-comment')
+const comments = []
+const insults = ['shit', 'fuck', 'poop', 'dumb', '새끼', '놈', '똥', '씨발', '좇', '시발', '좆', '죽어', '뒤져', '병신', '년']
+
+
+function buildElement(comment){
+    const item = document.createElement('div')
+    item.className = 'comment'
+    comment.split(' ').map( e => bliudDom(e)).forEach(e => item.appendChild(e))
+    return item;
+}
+
+function displayComments(comments){
+    userComments.innerHTML = ''
+    comments.forEach(c => userComments.appendChild(c))
+}
+
+function initInput(){
+    commentInput.value = ''
+}
+
+function addComment(){
+    const comment = commentInput.value
+    const filterComment = filtering(comment)
+
+    if(comment !== ''){
+        comments.push(buildElement(filterComment))
+        displayComments(comments)
+    }else{
+        alert('You need to give a comment !')
+    }
+    initInput()
+}
+
+function filtering(comment){
+   return comment.split(' ')
+            .map(word => insults.some(x => word.includes(x)) ? '😊' : word)
+            .join(' ')
+}
+
+submitBtn.addEventListener('click', addComment)
+searchUserComment.addEventListener('input', highLightWords)
