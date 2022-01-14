@@ -208,6 +208,7 @@ let points = []
 let x = 0; //degree
 let y = 0; //sin
 let radx = 0;
+let of = 0;
 
 //sin값 계산 함수
 function getNextPoint() {
@@ -220,7 +221,7 @@ function getNextPoint() {
 function displayPoint(point) {
     const pointEl = document.createElement('div')
     pointEl.className = 'dot'
-    pointEl.style.left = `${point[0] * 2}px`
+    pointEl.style.left = `${(point[0] - of)* 2}px`
     pointEl.style.top = `${(point[1] * -100) + 100}px`
     graph.appendChild(pointEl);
 }
@@ -229,10 +230,10 @@ function movingPoint(){
     graph.innerHTML = '';
     getNextPoint()
     if(points.length > 360){
-        points=[]; 
-        x=0;
+        points.shift()
+        of++;
     }
-    points.forEach(point => displayPoint(point))
+    points.forEach(displayPoint)
 }
 
 console.table(points)
