@@ -204,8 +204,7 @@ console.log(newFruits.map(e => e={name : e[0], totalPrice : e[1]}));
 console.log("************Quiz 5************");
 const graph = document.getElementById('graph');
 
-const points = []
-const dx = 1; //degree
+let points = []
 let x = 0; //degree
 let y = 0; //sin
 let radx = 0;
@@ -215,7 +214,7 @@ function getNextPoint() {
     radx = x * (Math.PI / 180) //dgree to radian
     y = Math.sin(radx);
     points.push([x, y])
-    x += dx
+    x++;
 }
 
 function displayPoint(point) {
@@ -229,6 +228,10 @@ function displayPoint(point) {
 function movingPoint(){
     graph.innerHTML = '';
     getNextPoint()
+    if(points.length > 360){
+        points=[]; 
+        x=0;
+    }
     points.forEach(point => displayPoint(point))
 }
 
